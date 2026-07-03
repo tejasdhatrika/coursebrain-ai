@@ -74,7 +74,18 @@ if uploaded_file:
 
         st.subheader("Lecture Summary")
 
-        st.write(summary)
+        st.markdown("### Summary")
+        st.write(summary["summary"])
+
+        st.markdown("### Key Concepts")
+
+        for concept in summary["key_concepts"]:
+            st.write(f"• {concept}")
+
+        st.markdown("### Important Takeaways")
+
+        for takeaway in summary["takeaways"]:
+            st.write(f"• {takeaway}")
         st.subheader("Timestamped Transcript")
 
         for item in transcript_data:
